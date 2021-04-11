@@ -185,7 +185,7 @@ def Checknum(sesp,count):
 
 
 def Cal():  ##1 people##
-    if incomenumber.get():
+    if incomenumber.get() and incomenumber.get()>=0 or incomenumber.get()==0:
         totallowance.insert(INSERT,'132000')  
         solo = incomenumber.get()
         solomonth = solo/12
@@ -197,8 +197,14 @@ def Cal():  ##1 people##
             MPF2 = 18000
         MPF.insert(INSERT,int(MPF2))
 
+        income0 = incomenumber.get()
+        if income0 == 0:
+           deduct.insert(INSERT,0)
+           netincome.insert(INSERT,0)
+           Taxpay.insert(INSERT,0) 
         
-        if incomenumber.get() <=132000: ##No tax payable##
+        
+        elif incomenumber.get() <=132000: ##No tax payable##
             deduct.insert(INSERT,0)
             netincome.insert(INSERT,0)
             Taxpay.insert(INSERT,0)
@@ -334,7 +340,7 @@ def Cal():  ##1 people##
                 print 'IFworng2'
 
     else:
-            print 'IFwrong'
+            tkMessageBox.showinfo("Error ","You need to input the vaild income")
 
 
 
