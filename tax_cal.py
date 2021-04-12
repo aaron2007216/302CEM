@@ -262,7 +262,7 @@ def Cal():  ##1 people##
                 deduct.insert(INSERT,int(mc))
                 if da <=0:
                     netincome.insert(INSERT,0)
-                    axpay.insert(INSERT,0)
+                    Taxpay.insert(INSERT,0)
                 else:
                     netincome.insert(INSERT,int(da))
                     if da >= 200000:
