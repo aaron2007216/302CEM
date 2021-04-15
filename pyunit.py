@@ -15,18 +15,13 @@ class CalculatorTestCase(unittest.TestCase):
     
     def test_1people2(self):
         
-        result = tax_cal.Cal1people(800000,18000)
-        self.assertEqual(result, 92500)
-
-    def test_1people3(self):
-        
         result = tax_cal.Cal1people(2040050,18000)
         self.assertEqual(result, 303307)
         
     def test_2people(self):
         
-        result = tax_cal.Cal2peopleSelfnSpouse(600000,400000,18000,18000)
-        self.assertEqual(result, 83000)
+        result = tax_cal.Cal2peopleSelfnSpouse(200000,300000,10000,15000)
+        self.assertEqual(result, 10900)
     
     def test_2people2(self):
         
@@ -42,7 +37,13 @@ class CalculatorTestCase(unittest.TestCase):
         
         result = tax_cal.Cal2peopleSelfnSpouse(2040050,2040050,18000,18000)
         self.assertEqual(result, 606614)
-    
+
+    def test_2people5(self):  
+        
+        result = tax_cal.Cal2peopleSelfnSpouse(1500000,1000000,18000,18000)
+        self.assertEqual(result, 338000)
+        
+        
     def test_2peopletotal(self):
         
         result = tax_cal.Cal2peopletotal(600000,400000,18000,18000)
